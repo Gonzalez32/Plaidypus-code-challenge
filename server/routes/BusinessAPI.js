@@ -17,7 +17,7 @@ class BusinessAPI extends YelpAPI {
     }
 
     details(res, id) {
-        let path = `/v3/businesses/${id}`;
+        let path = (`/v3/businesses/${id}`);
         this.makeHttpRequest(res, this.parseData, path);
     }
 };

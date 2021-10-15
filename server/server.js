@@ -4,8 +4,8 @@ const morgan = require('morgan');
 const app = express();
 
 
-const YelpFusionSearchAPI = require('./YelpFusionSearchAPI');
-const YelpFusionBusinessAPI = require('./YelpFusionBusinessAPI');
+const SearchAPI = require('./routes/SearchAPI');
+const BusinessAPI = require('./routes/BusinessAPI');
 const API_KEY = "AP2eJfeWneyYFpWyfzF5pIin6kcffQcH3nZM5SFeP6TvLoxVyfyu0YbRcko4Wzq9y94wrTC6D2SB5Cdz1_-oKAg8P_xbtA6ds3tirRDzCKHCqjSXWO4etC_kWWZoYXYx"
 
 // Tool to deBug
@@ -20,7 +20,7 @@ app.get('/search', (req, res) => {
         res.status(400).send({error: 'Location query parameter is not a string.'});
     }  else {
         req.query.location = req.query.location.replace(/ /g, '%20');
-        let request = new YelpFusionSearchAPI(API_KEY);
+        let request = new SearchAPI(API_KEY);
         request.search(res, req.query.location);
     }
 });
@@ -34,7 +34,7 @@ app.get('/business', (req, res) => {
         res.status(400).send({error: 'Business ID query parameter is not a string.'});
     }  else {
         req.query.id = req.query.id.replace(/ /g, '%20');
-        let request = new YelpFusionBusinessAPI(API_KEY);
+        let request = new BusinessAPI(API_KEY);
         request.details(res, req.query.id);
     }
 });
