@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-dom';
-import { makeHTTPRequest } from './HTTPRequest';
+import { Link } from 'react-router-dom';
+import { makeHTTPRequest } from '../service/HTTPRequest';
 
 export class BusinessUrl extends React.Component {
     constructor() {

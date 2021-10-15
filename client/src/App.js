@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { SearchPage } from './SearchPage';
-import { BusinessPage } from './BusinessPage'
+import { SearchPage } from './components/SearchPage';
+import { BusinessPage } from './components/BusinessPage';
 import './App.css';
 
 export class App extends React.Component {
