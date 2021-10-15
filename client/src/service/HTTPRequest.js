@@ -1,6 +1,6 @@
 let http = require('http');
 
-// fucntion that updates the DOM and path to the server express.
+// function that updates the DOM and path to the server express.
 export function makeHTTPRequest(update, path) {
     let options = {
         hostname: 'localhost',
