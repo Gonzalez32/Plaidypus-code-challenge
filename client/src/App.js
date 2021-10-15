@@ -1,21 +1,49 @@
-// import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { SearchPage } from './SearchPage';
+import { BusinessPage } from './BusinessPage'
 import './App.css';
 
-function App() {
-  state = { users: [] }
-
+export class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      businessid: "",
+      details: []
+    }
+    this.updateBuisinessDetails = this.updateBuisinessDetails.bind(this);
+  }
   componentDidMount() {
-    fetch('/users')
-    .then(res => res.json())
-    .then(users => this.setState({ users }));
-  };
-
-  return (
-    <div className="App">
-      <h1>Users</h1>
-      
-    </div>
-  );
-}
-
-export default App;
+    document.addEventListener('keypress', event => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+      }
+    });
+  }
+  /*
+    Updates the DOM with the results of the yelp business API call.
+  */
+  updateBuisinessDetails(details) {
+    this.setState({
+      businessid: details.id,
+      details: details
+    });
+  }
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <SearchPage updateBuisinessDetails={this.updateBuisinessDetails} />
+          </Route>
+          <Route exact path={`/${this.state.businessid}`}>
+            <BusinessPage id={this.state.businessid} details={this.state.details} />
+          </Route>
+          <Route path="/">
+            <SearchPage updateBuisinessDetails={this.updateBuisinessDetails} />
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
+};
