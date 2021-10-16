@@ -5,10 +5,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 export class BusinessPage extends React.Component {
     render() {
         return (
-            <Container>
-                <Row className="m-4">
-                    <Link to="/">Return to Search</Link>
-                </Row>
+            <Container className="container">
                 <Row className="m-4">
                     <h1>{this.props.details.name}</h1>
                 </Row>
@@ -25,7 +22,7 @@ export class BusinessPage extends React.Component {
                     <p>Hours:</p>
                 </Row>
                 <Row className="m-4">
-                    <ul>
+                    <ul className="ul-date">
                         {this.props.details.hours[0].open.map((day, index) => {
                             switch (day.day) {
                             case 0:
@@ -46,16 +43,19 @@ export class BusinessPage extends React.Component {
                                 return <br key={index} />;
                             }
                         })}
-                    </ul>
+                    </ul><br></br>
                 </Row>
                 <Row className="m-4">
                     {this.props.details.photos.map((photo, index) => {
                         return (<Col xs={6} md={4}><Image src={photo} width='250px' height='250px' rounded /></Col>);
                     })}
-                </Row>
+                </Row><br></br>
                 <Row className="m-4">
                     <p>For more information on {this.props.details.name} please visit the <a href={this.props.details.url}>Yelp Review Page</a>.</p>
                 </Row>
+                <Row className="m-4">
+                    <Link to="/">Return to Search</Link>
+                </Row><br></br>
             </Container>
         );
     }
