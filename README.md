@@ -18,7 +18,7 @@ Create a two-page application using the Yelp Fusion API.
 2. I use React to render the endpoints, that was require to display infomation on the front-end. I also Install React-Bootstrap to make styling easier, and use App.css to render the layouts that fits best. I didn't want to go over and beyond, but the styling could be more efficient if needs to be.
 # Instructions
 1. Clone this repository.
-2. Start the Express Server: 
+2. Start the Express Server.
 * cd into server
 * npm install or npm i
 * npm start
