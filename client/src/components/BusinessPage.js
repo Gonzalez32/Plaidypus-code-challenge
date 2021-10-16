@@ -6,7 +6,7 @@ export class BusinessPage extends React.Component {
     render() {
         return (
             <Container className="container"><br></br>
-                <Row className="">
+                <Row className="searchLink">
                     <Link to="/">
                         Return To Search</Link>
                 </Row><br></br>
@@ -15,13 +15,13 @@ export class BusinessPage extends React.Component {
                 </Row><br></br>
                 <Row className="mt-4 ml-4">
                     <p>{this.props.details.location.display_address[0]}, {this.props.details.location.display_address[1]}</p>
-                </Row>
+                </Row><br></br>
                 <Row className="mb-4 ml-4">
                     <p>{this.props.details.display_phone}</p>
-                </Row>
+                </Row><br></br>
                 <Row className="m-4">
                     <p>Rating: {this.props.details.rating} Stars with {this.props.details.review_count} reviews</p>
-                </Row>
+                </Row><br></br>
                 <Row className="m-4">
                     <p>Hours:</p>
                 </Row>
@@ -47,13 +47,13 @@ export class BusinessPage extends React.Component {
                                 return <br key={index} />;
                             }
                         })}
-                    </ul><br></br>
+                    </ul><br></br><br></br>
                 </Row>
                 <Row className="m-4">
                     {this.props.details.photos.map((photo, index) => {
-                        return (<Row xs={6} md={4}><Image src={photo} width='250px' height='250px' rounded /></Row>);
+                        return (<Col xs={6} md={4}><Image src={photo} width='250px' height='250px' rounded /></Col>);
                     })}
-                </Row><br></br>
+                </Row><br></br><br></br>
                 <Row className="m-4">
                     <p>For more information on {this.props.details.name} please visit the <a href={this.props.details.url}>Yelp Review Page</a>.</p>
                 </Row>
