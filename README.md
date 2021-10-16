@@ -5,6 +5,8 @@ Create a two-page application using the Yelp Fusion API.
 1. On the first page, you should be able to search for businesses in Naperville.
 2. When you select a result, it should take you to a second page where you can see details about the business.
 # Final Outlook:
+![Imgur](https://i.imgur.com/NKyzi3F.png)
+![Imgur](https://i.imgur.com/zAOAtZw.png)
 # Technologies Used:
 * JavaScript
 * React
