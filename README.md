@@ -17,11 +17,11 @@ Create a two-page application using the Yelp Fusion API.
 # Instructions
 1. Clone this repository.
 2. Start the Express Server: 
-cd into server
-npm install or npm i
-npm start
+* cd into server
+* npm install or npm i
+* npm start
 3. Start React client.
-cd into client
-npm install or npm i (This will take time.)
-yarn start
+* cd into client
+* npm install or npm i (This will take time.)
+* yarn start
 4. Go to http://localhost:3000/
