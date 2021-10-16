@@ -1,14 +1,18 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 export class BusinessPage extends React.Component {
     render() {
         return (
-            <Container className="container">
+            <Container className="container"><br></br>
+                <Row className="">
+                    <Link to="/">
+                        Return To Search</Link>
+                </Row><br></br>
                 <Row className="m-4">
                     <h1>{this.props.details.name}</h1>
-                </Row>
+                </Row><br></br>
                 <Row className="mt-4 ml-4">
                     <p>{this.props.details.location.display_address[0]}, {this.props.details.location.display_address[1]}</p>
                 </Row>
@@ -47,15 +51,12 @@ export class BusinessPage extends React.Component {
                 </Row>
                 <Row className="m-4">
                     {this.props.details.photos.map((photo, index) => {
-                        return (<Col xs={6} md={4}><Image src={photo} width='250px' height='250px' rounded /></Col>);
+                        return (<Row xs={6} md={4}><Image src={photo} width='250px' height='250px' rounded /></Row>);
                     })}
                 </Row><br></br>
                 <Row className="m-4">
                     <p>For more information on {this.props.details.name} please visit the <a href={this.props.details.url}>Yelp Review Page</a>.</p>
                 </Row>
-                <Row className="m-4">
-                    <Link to="/">Return to Search</Link>
-                </Row><br></br>
             </Container>
         );
     }

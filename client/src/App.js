@@ -20,9 +20,9 @@ export class App extends React.Component {
       }
     });
   }
-  /*
-    Updates the DOM with the results of the yelp business API call.
-  */
+
+  // Updates the DOM with the results of the yelp business API call.
+
   updateBuisinessDetails(details) {
     this.setState({
       businessid: details.id,
@@ -44,6 +44,6 @@ export class App extends React.Component {
           </Route>
         </Switch>
       </Router>
-    );
+    );  
   }
 };
