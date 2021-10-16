@@ -35,7 +35,7 @@ export class SearchPage extends React.Component {
             <Container>
                 <Row className="justify-content-center m-4">
                     <h1>Plaidypus Code Challenge</h1>
-                </Row>
+                </Row><br></br>
                 <Row className="justify-content-center m-4">
                     <p>Search for businesses by typing a location into the search bar below and click search.</p>
                 </Row>

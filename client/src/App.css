@@ -46,3 +46,8 @@ p {
 li {
   color: wheat;
 }
+
+img {
+  border-radius: 50%;
+  margin: 2%;
+}

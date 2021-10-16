@@ -21,7 +21,7 @@ export class SearchBar extends React.Component {
     render() {
         return (
             <Form inline>
-                <FormControl ref="Search" type="text" placeholder="Search Business" className="mr-sm-2" />
+                <FormControl ref="Search" type="text" placeholder="Enter City" className="mr-sm-2" />
                 <Button type="button" variant="outline-success" onClick={this.search}>Search</Button>
             </Form>
         );
